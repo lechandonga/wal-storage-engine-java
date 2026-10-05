@@ -4,12 +4,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**
- * @author Vincent
- * @version 1.0
+ * Spring 上下文装配冒烟测试：验证 KeyValueStore Bean 与 REST 层能正常启动。
  */
-@SpringBootTest
-public class ApplicationTests {
+@SpringBootTest(properties = "kv.store.directory=${java.io.tmpdir}/wal-kv-spring-smoke")
+class ApplicationTests {
+
     @Test
-    public void contentLoad() {
+    void contextLoads() {
     }
 }
